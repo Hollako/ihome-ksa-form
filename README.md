@@ -1,2 +1,135 @@
-# iHome KSA Landing Page
-This is the landing page for iHome KSA smart home solutions.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iHome KSA - Smart Home Solutions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .btn {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    form {
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select, input[type="text"], input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      background: #28a745;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .thankyou {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>iHome KSA</h1>
+    <h2>Smart Home Systems for Contractors & Serious Homeowners</h2>
+    <p>Get a quick quote by answering a few short questions. We’ll contact you via WhatsApp.</p>
+
+    <form id="quoteForm">
+      <label for="type">Are you a:</label>
+      <select id="type" name="type" required>
+        <option value="">-- Select --</option>
+        <option value="Homeowner">Homeowner</option>
+        <option value="Contractor">Contractor</option>
+        <option value="Interior Designer">Interior Designer</option>
+        <option value="Engineer">Engineer</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="project">Project Type:</label>
+      <select id="project" name="project" required>
+        <option value="">-- Select --</option>
+        <option value="New Build">New Build</option>
+        <option value="Renovation">Renovation</option>
+        <option value="Exploring">Just Exploring</option>
+      </select>
+
+      <label for="timeline">Project Start Timeline:</label>
+      <select id="timeline" name="timeline" required>
+        <option value="">-- Select --</option>
+        <option value="Immediately">Immediately</option>
+        <option value="1 month">Within 1 Month</option>
+        <option value="2-3 months">2–3 Months</option>
+        <option value="Later">Later</option>
+      </select>
+
+      <label for="budget">Estimated Budget:</label>
+      <select id="budget" name="budget" required>
+        <option value="">-- Select --</option>
+        <option value="Under 10000">Under SAR 10,000</option>
+        <option value="10000-30000">SAR 10,000–30,000</option>
+        <option value="30000+">SAR 30,000+</option>
+      </select>
+
+      <label for="phone">WhatsApp Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="e.g. +9665xxxxxxxx" required>
+
+      <button type="submit">Submit & Contact Us</button>
+    </form>
+
+    <div class="thankyou" id="thankyouMessage">
+      Thank you! We’ll contact you via WhatsApp soon.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('quoteForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('quoteForm').style.display = 'none';
+      document.getElementById('thankyouMessage').style.display = 'block';
+
+      const phone = document.getElementById('phone').value;
+      const url = `https://wa.me/${phone.replace(/\D/g, '')}?text=Thank you for your interest in iHome KSA. We received your smart home project request and will contact you shortly.`;
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
