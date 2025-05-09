@@ -22,6 +22,11 @@
     h1, h2 {
       color: #333;
     }
+    .logo {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto 20px;
+    }
     .btn {
       display: inline-block;
       background: #007bff;
@@ -66,11 +71,12 @@
 </head>
 <body>
   <div class="container">
+    <img src="logo.png" alt="iHome KSA Logo" class="logo">
     <h1>iHome KSA</h1>
-    <h2>Smart Home Systems for Contractors & Serious Homeowners</h2>
+    <h2>Smart Home Systems for Contractors & Homeowners</h2>
     <p>Get a quick quote by answering a few short questions. We’ll contact you via WhatsApp.</p>
 
-    <form id="quoteForm">
+    <form action="https://formspree.io/f/mrbqledp" method="POST" id="quoteForm">
       <label for="type">Are you a:</label>
       <select id="type" name="type" required>
         <option value="">-- Select --</option>
@@ -107,29 +113,17 @@
       </select>
 
       <label for="phone">WhatsApp Number:</label>
-      <input type="tel" id="phone" name="phone" placeholder="e.g. +9665xxxxxxxx" required>
+      <input type="tel" id="phone" name="phone" placeholder="e.g. +966xxxxxxxxx" required>
+
+      <input type="hidden" name="_subject" value="New Smart Home Lead from iHome KSA">
+      <input type="hidden" name="_redirect" value="https://ihome-ksa.github.io/ihome-ksa-landing-page/thankyou.html">
 
       <button type="submit">Submit & Contact Us</button>
     </form>
 
     <div class="thankyou" id="thankyouMessage">
-      Thank you! We’ll contact you via WhatsApp soon.
+      Thank you! We’ll contact you soon.
     </div>
   </div>
-
-  <script>
-    document.getElementById('quoteForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('quoteForm').style.display = 'none';
-      document.getElementById('thankyouMessage').style.display = 'block';
-
-      const phone = document.getElementById('phone').value;
-      const url = `https://wa.me/${phone.replace(/\D/g, '')}?text=Thank you for your interest in iHome KSA. We received your smart home project request and will contact you shortly.`;
-
-      setTimeout(() => {
-        window.location.href = url;
-      }, 3000);
-    });
-  </script>
 </body>
 </html>
