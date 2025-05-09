@@ -3,33 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thank You</title>
+  <title>Thank You - iHome KSA</title>
   <style>
     body {
-      font-family: sans-serif;
-      background-color: #f9f9f9;
-      text-align: center;
-      padding: 50px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f1115;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
     }
+
     .container {
-      background: white;
-      max-width: 500px;
-      margin: auto;
-      padding: 30px;
+      max-width: 600px;
+      margin: 60px auto;
+      background: #181b20;
+      padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     }
+
+    .logo {
+      max-width: 180px;
+      margin-bottom: 25px;
+    }
+
     h1 {
-      color: #1e90ff;
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    h2 {
+      font-size: 22px;
+      color: #cccccc;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #aaaaaa;
+      margin-bottom: 30px;
+    }
+
+    .label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .label-row span {
+      flex: 1 1 45%;
+    }
+
+    .label-arabic {
+      text-align: right;
+      direction: rtl;
+      font-family: 'Tahoma', sans-serif;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(90deg, #2fa3dc, #00b3b9);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    a.button:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Thank You!</h1>
-    <p>Your message has been received. We'll contact you very soon via WhatsApp or email.</p>
-    <br>
-    <a href="index.html">← Back to Home</a>
+    <img src="iHome_KSA_Wide.jpg" alt="iHome KSA Logo" class="logo">
+
+    <h1>Thank you for your submission!</h1>
+    <h2>!شكراً لتواصلك معنا</h2>
+    
+    <p>We have received your request and will contact you soon.</p>
+    <p>.لقد استلمنا طلبك وسنتواصل معك قريباً</p>
+
+    <div class="label-row">
+      <span><strong>iHome KSA – Every Home Deserves to be SMART!!</strong></span>
+    </div>
+	<br></br>
+    <a class="button" href="https://www.ihome-ksa.com">Back to Home</a>
   </div>
 </body>
 </html>
