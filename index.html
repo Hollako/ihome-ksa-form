@@ -1,70 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>iHome KSA - Smart Home Solutions</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f1115;
+      color: #f0f0f0;
       margin: 0;
       padding: 0;
     }
+
     .container {
       max-width: 600px;
       margin: 40px auto;
-      background: white;
+      background: #181b20;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     }
-    h1, h2 {
-      color: #333;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #ffffff;
     }
+
+    p {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #cccccc;
+    }
+
     .logo {
-      max-width: 200px;
+      max-width: 180px;
       display: block;
       margin: 0 auto 20px;
     }
-    .btn {
-      display: inline-block;
-      background: #007bff;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    form {
-      margin-top: 20px;
-    }
-    label {
-      display: block;
+
+    .label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
       margin-top: 15px;
-      font-weight: bold;
     }
+
+    .label-row span {
+      flex: 1 1 45%;
+    }
+
+    .label-arabic {
+      text-align: right;
+      direction: rtl;
+      font-family: 'Tahoma', sans-serif;
+    }
+
     select, input[type="text"], input[type="tel"], input[type="email"] {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 6px;
+      background-color: #2b3139;
+      color: #ffffff;
     }
+
+    select:focus, input:focus {
+      outline: none;
+      border: 1px solid #2fa3dc;
+      background-color: #2b3139;
+    }
+
     button {
       margin-top: 20px;
-      background: #28a745;
+      background: linear-gradient(90deg, #2fa3dc, #00b3b9);
       color: white;
-      padding: 10px;
+      padding: 12px;
+      width: 100%;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
+      font-size: 16px;
     }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
     .thankyou {
       display: none;
       text-align: center;
       margin-top: 20px;
-      color: green;
+      color: #28a745;
       font-weight: bold;
     }
   </style>
@@ -72,19 +102,18 @@
 <body>
   <div class="container">
     <img src="iHome_KSA_Wide.jpg" alt="iHome KSA Logo" class="logo">
-    <h2>Smart Home Systems Application Form for Contractors, Engineers, and Homeowners</h2>
-    <h2>نموذج طلب أنظمة المنازل الذكية للمقاولين والمهندسين وأصحاب المنازل</h2>
+
+    <h2>Smart Home Systems Application Form</h2>
+    <h2>نموذج طلب أنظمة المنازل الذكية</h2>
     <p>Please complete a short questionnaire. We will review your inquiry and contact you shortly.</p>
     <p>.يرجى تعبئة استبيان قصير. سنراجع استفسارك ونتواصل معك قريبًا</p>
 
     <form action="https://formspree.io/f/mrbqledp" method="POST" id="quoteForm">
-      <label for="type">Are you a:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:هل انت</label>
+
+      <label for="type" class="label-row">
+        <span>Are you a:</span>
+        <span class="label-arabic">هل أنت:</span>
+      </label>
       <select id="type" name="type" required>
         <option value="">-- Select --</option>
         <option value="Homeowner">Homeowner - مالك منزل</option>
@@ -94,25 +123,23 @@
         <option value="Other">Other - غير ذلك</option>
       </select>
 
-      <label for="project">Project Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:نوع المشروع</label>
+      <label for="project" class="label-row">
+        <span>Project Type:</span>
+        <span class="label-arabic">نوع المشروع:</span>
+      </label>
       <select id="project" name="project" required>
         <option value="">-- Select --</option>
-        <option value="Under Construction / ">Under Construction - قيد الأنشاء</option>
-        <option value="Structurally Completed / New Build">Structurally Completed / New Build - مكتمل هيكليًا / بناء جديد</option>
+        <option value="Under Construction">Under Construction - قيد الإنشاء</option>
+        <option value="Structurally Completed">Structurally Completed / New Build - مكتمل هيكليًا / بناء جديد</option>
         <option value="Completed and Furnished">Completed and Furnished - مكتمل ومفروش</option>
         <option value="Renovation">Renovation - تجديد</option>
         <option value="Exploring">Just Exploring - مجرد استكشاف</option>
       </select>
 
-      <label for="timeline">Project Start Timeline:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:الجدول الزمني لبدء المشروع</label>
+      <label for="timeline" class="label-row">
+        <span>Project Start Timeline:</span>
+        <span class="label-arabic">الجدول الزمني لبدء المشروع:</span>
+      </label>
       <select id="timeline" name="timeline" required>
         <option value="">-- Select --</option>
         <option value="Immediately">Immediately - في الحال</option>
@@ -121,27 +148,31 @@
         <option value="Later">Later - لاحقاً</option>
       </select>
 
-      <label for="budget">Estimated Budget:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:الميزانية التقديرية</label>
+      <label for="budget" class="label-row">
+        <span>Estimated Budget:</span>
+        <span class="label-arabic">الميزانية التقديرية:</span>
+      </label>
       <select id="budget" name="budget" required>
         <option value="">-- Select --</option>
-        <option value="Under 10000">Under SAR 10,000 أقل من</option>
+        <option value="Under 10000">Under SAR 10,000 - أقل من</option>
         <option value="10000-30000">SAR 10,000–30,000</option>
         <option value="30000+">SAR 30,000+</option>
       </select>
 
-      <label for="phone">WhatsApp Number:</label>
+      <label for="phone" class="label-row">
+        <span>WhatsApp Number:</span>
+        <span class="label-arabic">رقم واتساب:</span>
+      </label>
       <input type="tel" id="phone" name="phone" placeholder="e.g. +966xxxxxxxxx" required>
 
-      <label for="email">Email Address:</label>
+      <label for="email" class="label-row">
+        <span>Email Address:</span>
+        <span class="label-arabic">البريد الإلكتروني:</span>
+      </label>
       <input type="email" id="email" name="email" placeholder="you@example.com" required>
-      
+
       <input type="hidden" name="_subject" value="New Smart Home Lead from iHome KSA">
       <input type="hidden" name="_redirect" value="https://Hollako.github.io/ihome-ksa-form/thankyou.html">
-
 
       <button type="submit">Submit & Contact Us</button>
     </form>
